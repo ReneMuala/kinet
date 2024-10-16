@@ -4,7 +4,7 @@ target("kinet")
     set_languages("c++23")
     set_kind("binary")
     add_packages("drogon", "opencv")
-    add_files("src/*.cpp", "src/model/*.cpp", "src/service/*.cpp")
+    add_files("src/*.cpp", "src/model/*.cpp", "src/service/*.cpp", "src/controller/*.cpp")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io

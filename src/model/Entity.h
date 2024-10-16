@@ -6,7 +6,7 @@
 #define ENTITY_H
 #include <string>
 
-#include "path.h"
+#include "Path.h"
 
 namespace model {
 
@@ -14,7 +14,7 @@ typedef long long EntityID;
 
 struct Entity {
     static EntityID globalId;
-    EntityID id;
+    EntityID id = globalId++;
     Path path;
     double speed;
     std::string name;

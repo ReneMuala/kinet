@@ -6,12 +6,15 @@
 #define PATH_H
 #include <vector>
 
-#include "snapshot.h"
+#include "Snapshot.h"
 
 namespace model {
 
-struct Path: std::vector<Snapshot> {
+struct Path {
+    std::vector<Snapshot> snapshots;
     std::string entity_name;
+
+    [[nodiscard]] const Snapshot& get_last() const;
 };
 
 } // model
