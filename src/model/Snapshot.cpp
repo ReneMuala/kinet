@@ -5,6 +5,11 @@
 #include "Snapshot.h"
 #include <cmath>
 namespace model {
+    double operator-(const cv::Point2f& p1, const cv::Point2f& p2)
+    {
+        return sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
+    }
+
     cv::Point2f Snapshot::get_center() const
     {
         return cv::Point2f( start.x + (end.x - start.x) / 2, start.y + (end.y - start.y) / 2 );
@@ -14,6 +19,6 @@ namespace model {
     {
         auto const c1 = get_center();
         auto const c2 = other.get_center();
-        return sqrt(pow(c1.x - c2.x, 2) + pow(c1.y - c2.y, 2));
+        return c1 - c2;
     }
 } // model

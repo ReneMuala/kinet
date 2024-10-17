@@ -11,9 +11,11 @@
 namespace model {
 
 struct Path {
-    std::vector<Snapshot> snapshots;
+    static constexpr auto max_size = 100;
+    std::array<Snapshot, max_size> snapshots;
     std::string entity_name;
-
+    int size{};
+    void addSnapshot(const Snapshot & snapshot);
     [[nodiscard]] const Snapshot& get_last() const;
 };
 
