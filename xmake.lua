@@ -5,11 +5,7 @@ target("kinet")
     set_kind("binary")
     add_packages("drogon", "opencv", "dlib")
     add_files("src/*.cpp", "src/model/*.cpp", "src/service/*.cpp", "src/controller/*.cpp")
-target("test-dlib")
-    set_languages("c++23")
-    set_kind("binary")
-    add_packages("dlib")
-    add_files("tests/dlib.cpp")
+
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --
